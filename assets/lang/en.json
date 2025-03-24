@@ -1,0 +1,10 @@
+{
+  "login": "Log in",
+  "please_enter_email_password": "Please enter your email and password",
+  "email_not_registered": "This email is not registered, please sign up",
+  "login_error": "Login error",
+  "email": "Email",
+  "password": "Password",
+  "forgot_password": "Forgot Password?",
+  "register": "Register"
+}

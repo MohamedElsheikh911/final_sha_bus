@@ -1,0 +1,37 @@
+name: final_project
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  firebase_core: any
+  easy_localization: any
+  firebase_database: any
+  cloud_firestore: any
+  firebase_auth: any
+  google_maps_flutter: any
+  geolocator: any
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  provider: any
+  shared_preferences: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/files/
+    - assets/lang/

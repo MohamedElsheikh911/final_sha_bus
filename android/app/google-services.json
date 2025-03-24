@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558827712643",
+    "project_id": "shabus-1f7a8",
+    "storage_bucket": "shabus-1f7a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558827712643:android:778e19e36311dd977febb6",
+        "android_client_info": {
+          "package_name": "com.example.final_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7oDJkZRVJ_Sb2ynQKSKgpQljhIWnnvYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
