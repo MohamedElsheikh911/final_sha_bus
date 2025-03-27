@@ -1,3 +1,4 @@
+import 'package:final_project/Sha_Bus/select_pay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -8,10 +9,7 @@ void main() {
 class cardd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: card(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: card());
   }
 }
 
@@ -25,10 +23,6 @@ class card extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {},
-        ),
         title: Text(
           'Payment Method',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -52,21 +46,32 @@ class card extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _buildTextField('Credit Card Number',
-                            'Enter your card number', TextInputType.number),
+                        _buildTextField(
+                          'Credit Card Number',
+                          'Enter your card number',
+                          TextInputType.number,
+                        ),
                         SizedBox(height: 20),
                         _buildExpirationFields(),
                         SizedBox(height: 20),
                         _buildTextField(
-                            'Security Code', 'CVC/CVV', TextInputType.number),
+                          'Security Code',
+                          'CVC/CVV',
+                          TextInputType.number,
+                        ),
                       ],
                     ),
                   ),
                 ),
                 _buildButton('Pay Now', buttonColor, textColor, () {}),
                 SizedBox(height: 10),
-                _buildButton('Back', Colors.white, black, () {},
-                    border: BorderSide(color: Colors.black)),
+                _buildButton('Back', Colors.white, black, () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => PaymentMethodScreen(),
+                    ),
+                  );
+                }, border: BorderSide(color: Colors.black)),
                 SizedBox(height: 20),
               ],
             ),
@@ -97,7 +102,10 @@ class card extends StatelessWidget {
           Text(
             '5390 EGP',
             style: TextStyle(
-                fontSize: 22, fontWeight: FontWeight.bold, color: primaryColor),
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: primaryColor,
+            ),
           ),
         ],
       ),
@@ -108,8 +116,10 @@ class card extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 8),
         TextField(
           decoration: InputDecoration(
@@ -133,8 +143,12 @@ class card extends StatelessWidget {
   }
 
   Widget _buildButton(
-      String text, Color bgColor, Color textColor, VoidCallback onPressed,
-      {BorderSide? border}) {
+    String text,
+    Color bgColor,
+    Color textColor,
+    VoidCallback onPressed, {
+    BorderSide? border,
+  }) {
     return SizedBox(
       width: double.infinity,
       height: 55,
@@ -147,9 +161,14 @@ class card extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Text(text,
-            style: TextStyle(
-                color: textColor, fontSize: 18, fontWeight: FontWeight.bold)),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

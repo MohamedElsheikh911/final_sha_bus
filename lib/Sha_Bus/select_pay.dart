@@ -1,4 +1,5 @@
-import 'package:final_project/Sha_Bus/Pay_Now.dart';
+import 'package:final_project/Sha_Bus/Departure%20Trips%202.dart';
+import 'package:final_project/Sha_Bus/card_pay.dart';
 import 'package:flutter/material.dart';
 
 import 'Fawry_Pay.dart';
@@ -57,12 +58,20 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 ),
               ),
               padding: EdgeInsets.only(
-                  left: screenWidth * 0.05, top: screenHeight * 0.05),
+                left: screenWidth * 0.05,
+                top: screenHeight * 0.05,
+              ),
               child: Row(
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back, color: AppColors.white),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => DepartureTripsScreen(),
+                        ),
+                      );
+                    },
                   ),
                   const SizedBox(width: 10),
                   const Text(
@@ -83,26 +92,34 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 children: [
                   paymentOption(
                     title: "Credit card",
-                    image: Image.asset("assets/images/visa.png",
-                        width: screenWidth * 0.4),
+                    image: Image.asset(
+                      "assets/images/visa.png",
+                      width: screenWidth * 0.4,
+                    ),
                   ),
                   divider(),
                   paymentOption(
                     title: "Fawry",
-                    image: Image.asset("assets/images/fawry.png",
-                        width: screenWidth * 0.3),
+                    image: Image.asset(
+                      "assets/images/fawry.png",
+                      width: screenWidth * 0.3,
+                    ),
                   ),
                   divider(),
                   paymentOption(
                     title: "Aman",
-                    image: Image.asset("assets/images/Aman.png",
-                        width: screenWidth * 0.3),
+                    image: Image.asset(
+                      "assets/images/Aman.png",
+                      width: screenWidth * 0.3,
+                    ),
                   ),
                   divider(),
                   paymentOption(
                     title: "Smart_Wallet",
-                    image: Image.asset("assets/images/wellet.png",
-                        width: screenWidth * 0.2),
+                    image: Image.asset(
+                      "assets/images/wellet.png",
+                      width: screenWidth * 0.2,
+                    ),
                   ),
                   const SizedBox(height: 40),
                   SizedBox(
@@ -172,10 +189,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-  Widget paymentOption({
-    required String title,
-    required Widget image,
-  }) {
+  Widget paymentOption({required String title, required Widget image}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: InkWell(
