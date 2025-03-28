@@ -38,7 +38,7 @@ class DepartureTripsScreen1 extends StatelessWidget {
             onPressed: () {
               Navigator.of(
                 context,
-              ).push(MaterialPageRoute(builder: (context) => BusBookingApp()));
+              ).push(MaterialPageRoute(builder: (context) => BusBookingScreen()));
             },
           ),
           title: Text(
